@@ -1,6 +1,6 @@
 # DDoS Detection using Machine Learning and Markov Chains
 
-This project aims to provide a robust, two-layered defense mechanism against Distributed Denial of Service (DDoS) attacks by combining Machine Learning (ML) techniques for detection with Markov Chains for adaptive mitigation. It is designed for Software-Defined Networking (SDN) scenarios but can be adapted to other network environments.
+This project aims to provide a robust, two-layered defense mechanism against DDoS attacks by combining Machine Learning techniques for detection with Markov Chains for adaptive mitigation. It is designed for SDN scenarios but can be adapted to other network environments.
 
 ---
 
@@ -31,10 +31,10 @@ To detect and mitigate DDoS attacks in real-time using:
 
 ### Approach
 
-- **Detection**: A combination of a Deep Neural Network (DNN) and an SVM classifier that classify incoming traffic as either DDoS or benign.
-- **State Transitions**: A finite-state Markov Chain with states: Normal, Suspicious, Under Attack, and Mitigation. Transitions are based on historical patterns and traffic statistics.
-- **Mitigation**: Adaptive strategies including Rate Limiting, Traffic Shaping, IP Blocking, and Dynamic Bandwidth Allocation.
-- **Reward Mechanism**: Each action is rewarded/penalized based on queue metrics, dropped packets, and overhead.
+- A combination of a Deep Neural Network (DNN) and an SVM classifier that classify incoming traffic as either DDoS or benign.
+- A finite-state Markov Chain with states: Normal, Suspicious, Under Attack, and Mitigation. Transitions are based on historical patterns and traffic statistics.
+-  Adaptive strategies including Rate Limiting, Traffic Shaping, IP Blocking, and Dynamic Bandwidth Allocation.
+- Each action is rewarded/penalized based on queue metrics, dropped packets, and overhead.
 
 ---
 
