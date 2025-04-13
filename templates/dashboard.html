@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDoS Defense System Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #34495e;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .info-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: #34495e;
+        }
+
+        .info-box .label {
+            font-weight: bold;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        footer a {
+            color: #34495e;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Auto-refresh the dashboard every 5 seconds
+        setInterval(function() {
+            location.reload();
+        }, 5000);
+    </script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-shield-alt"></i> DDoS Defense System Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <!-- System State Section -->
+        <div class="section">
+            <h2>System State</h2>
+            <div class="info-box">
+                <span class="label">Current State:</span>
+                <span>{{ current_state }}</span>
+            </div>
+            <div class="info-box">
+                <span class="label">Current Mitigation Strategy:</span>
+                <span>{{ current_strategy }}</span>
+            </div>
+        </div>
+
+        <!-- Rewards and Penalties Section -->
+        <div class="section">
+            <h2>Penalties</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>Penalty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for strategy, reward in rewards.items() %}
+                        <tr>
+                            <td>{{ strategy }}</td>
+                            <td>{{ reward }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; DDoS Defense System for ECE514 | by <a href="#">Alpar Arman</a></p>
+    </footer>
+</body>
+</html>

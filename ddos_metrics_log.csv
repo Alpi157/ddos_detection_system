@@ -1,0 +1,19 @@
+Timestamp,State,Strategy,Initial Malicious Traffic,Remaining Malicious Traffic,Initial Legitimate Traffic,Remaining Legitimate Traffic,Reward
+2024-11-23 21:59:09,Mitigation,TrafficShaping,50,50,14,14,-5
+2024-11-23 21:59:54,Mitigation,DynamicBandwidth,155,155,32,32,-5
+2024-11-23 21:59:57,Mitigation,TrafficShaping,162,162,34,34,-5
+2024-11-23 22:00:24,Mitigation,TrafficShaping,217,217,54,54,-5
+2024-11-23 22:01:12,Mitigation,TrafficShaping,326,326,83,83,-5
+2024-11-23 22:02:12,Mitigation,IPBlocking,458,458,113,113,-15
+2024-11-23 22:02:14,Mitigation,RateLimiting,464,464,115,115,-5
+2024-11-23 22:02:21,Mitigation,TrafficShaping,481,481,117,117,-5
+2024-11-23 22:02:27,Mitigation,TrafficShaping,495,495,121,121,-5
+2024-11-23 22:02:31,Mitigation,TrafficShaping,503,503,123,123,-5
+2024-11-23 22:02:45,Mitigation,DynamicBandwidth,533,533,129,129,-5
+2024-11-23 22:03:32,Mitigation,DynamicBandwidth,643,643,149,149,-5
+2024-11-23 22:04:03,Mitigation,DynamicBandwidth,716,716,163,163,-5
+2024-11-23 22:05:38,Mitigation,DynamicBandwidth,937,937,206,206,-5
+2024-11-23 22:05:49,Mitigation,DynamicBandwidth,962,962,212,212,-5
+2024-11-23 22:06:05,Mitigation,DynamicBandwidth,997,997,221,221,-5
+2024-11-23 22:06:46,Mitigation,DynamicBandwidth,1095,1095,238,238,-5
+2024-11-23 22:06:49,Mitigation,DynamicBandwidth,1100,1100,239,239,-5

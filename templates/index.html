@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE_SCAN</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+        body, html {
+            font-family: "Montserrat", sans-serif;;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://www.vyopta.com/wp-content/uploads/2019/01/iStock-952039816.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+
+        h2 {
+            font-weight: bold;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .form-group {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+            background-color: #e83e8c;
+            border-color: #e83e8c;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        .btn-primary:hover {
+            background-color: #d72475;
+            border-color: #d72475;
+        }
+
+        .form-control-file {
+            border-radius: 5px;
+          width: auto!important;
+        }
+
+        .country-select {
+            color: white; /* Цвет текста внутри списка */
+            background-color: #e83e8c; /* Фоновый цвет */
+            border: 1px solid #d72475; /* Цвет границы */
+            padding: 10px; /* Внутренний отступ */
+            border-radius: 5px; /* Радиус границы для скругления углов */
+            width: 100%; /* Ширина для соответствия контейнеру */
+            box-sizing: border-box; /* Для корректного расчета ширины с учетом padding */
+            cursor: pointer; /* Курсор в виде руки, указывающей на интерактивный элемент */
+            transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+        }
+
+        .country-select:hover {
+            background-color: #d72475; /* Темнее тон фона при наведении */
+        }
+
+        #result {
+            margin-top: 20px;
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .filename {
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+      ol {
+        counter-reset: sickstuff;
+        list-style-type: none;
+        padding-left: 16px;
+        margin-bottom: 26px;
+      }
+      ol li {
+        position: relative;
+        padding-left: 32px;
+        counter-increment: sickstuff;
+      }
+      ol li + li {
+        margin-top: 0.5em;
+      }
+      ol li:before {
+        content: counter(sickstuff);
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+        top: calc((1.125rem * 1.5) - 24px);
+        font-size: 0.75em;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e83e8c;
+        color: #fff;
+        font-weight: 600;
+      }
+      input[type="file"] {
+        outline: none;
+        padding: 4px;
+        margin: -4px;
+      }
+
+      input[type="file"]:focus-within::file-selector-button,
+      input[type="file"]:focus::file-selector-button {
+        outline: 2px solid #e83e8c;
+        outline-offset: 2px;
+      }
+
+      input[type="file"]::before {
+        top: 16px;
+      }
+
+      input[type="file"]::after {
+        top: 14px;
+      }
+
+      /* ------- From Step 2 ------- */
+
+      input[type="file"] {
+        position: relative;
+      }
+
+      input[type="file"]::file-selector-button {
+        width: 136px;
+        color: transparent;
+      }
+
+      /* Faked label styles and icon */
+      input[type="file"]::before {
+        position: absolute;
+        pointer-events: none;
+           top: 12px;
+        left: 40px;
+        color: white;
+        content: "Upload File";
+      }
+
+      input[type="file"]::after {
+        position: absolute;
+        pointer-events: none;
+        /*   top: 10px; */
+        left: 16px;
+        height: 20px;
+        width: 20px;
+        content: "";
+        background-image: url(r"https://drive.google.com/file/d/1fFbhN5yUn_hTwdoYUjHiiQPFNqucxAWi/view?usp=sharing");
+      }
+
+      /* ------- From Step 1 ------- */
+
+      /* file upload button */
+      input[type="file"]::file-selector-button {
+        border-radius: 4px;
+        padding: 0 16px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #e83e8c;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+        margin-right: 16px;
+        transition: background-color 200ms;
+      }
+
+      /* file upload button hover state */
+      input[type="file"]::file-selector-button:hover {
+        background-color: #d72475;
+      }
+
+      /* file upload button active state */
+      input[type="file"]::file-selector-button:active {
+        background-color: #8c1249;
+      }
+      .highlight {
+        color: #e83e8c;
+      }
+
+      .next-icon {
+        width: 20px;
+        margin-left: 2px;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>SAFE_SCAN by Aipril</h2>
+
+        <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="country">Выберите страну: </label>
+                <select class="country-select" id="country" name="country">
+                    <option value="azerbaijan">Азербайджан</option>
+                    <option value="estonia">Эстония</option>
+                </select>
+            </div>
+
+            <p>Пожалуйста, загрузите изображение документа, который вы хотите проверить:</p>
+
+            <div class="form-group">
+                <input type="file" class="form-control-file" id="file" name="file" required>
+                <span class="filename"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Scan the image</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        $('#uploadForm').on('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: formData,
+                success: function(data) {
+                    var results = data.split('\n'); // Предполагаем, что данные возвращаются с переносами строк
+                    var formattedResults = '<ol>';
+                    results.forEach(function(result) {
+                        formattedResults += '<li>' + result + '</li>';
+                    });
+                    formattedResults += '</ol>';
+                    $('#result').html(formattedResults);
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        });
+
+    });
+    </script>
+</body>
+</html>
+</html>
