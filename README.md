@@ -14,7 +14,7 @@ This project aims to provide a robust, two-layered defense mechanism against DDo
 - [System Architecture](#6-system-architecture)
 - [How It Works](#7-how-it-works)
 - [Detailed Explanation of Files](#8-detailed-explanation-of-files)
-- [Logging & Monitoring](#9-logging--monitoring)
+- [Logging & Monitoring](#9-logging-and-monitoring)
 - [Experimental Notebook](#10-experimental-notebook)
 - [Future Improvements](#11-future-improvements)
 
