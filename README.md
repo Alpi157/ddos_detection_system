@@ -341,6 +341,28 @@ Get-Content ddos_detection.log -Wait
 - **Scalability**: Move to distributed/cloud-based deployment
 - **Expanded Detection**: Add port scans, app-layer DDoS, etc.
 
+
 ---
 
+## Citing This Work
+
+If you use any part of this repository, please cite:
+
+```bibtex
+@misc{arman2025mlp2p,
+  author       = {Alpar Arman},
+  title        = {DDoS Detection using Machine Learning and Markov Chains},
+  howpublished = {GitHub},
+  year         = {2025},
+  url          = {https://github.com/Alpi157/ddos_detection_system}
+}
+```
+
+---
+
+## License
+
+**MIT License** – © 2025 Alpar Arman
+
+Feel free to use, modify, and distribute – a citation or star is always appreciated!
 
