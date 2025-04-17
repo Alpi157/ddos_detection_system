@@ -349,7 +349,7 @@ Get-Content ddos_detection.log -Wait
 If you use any part of this repository, please cite:
 
 ```bibtex
-@misc{arman2025mlp2p,
+@misc{arman2025mlddos,
   author       = {Alpar Arman},
   title        = {DDoS Detection using Machine Learning and Markov Chains},
   howpublished = {GitHub},
